@@ -3,10 +3,10 @@
 
 int main(void)
 {
-    int dollars = 1;
+    long dollars = 1;
     while (true)
     {
-     char c = get_char ("Here's $%i. Double it and give it to the next person?", dollars);
+     char c = get_char ("Here's $%li. Double it and give it to the next person?", dollars);
      if (c == 'y')
 
         {
@@ -21,5 +21,5 @@ int main(void)
         }
      }
 
-     printf("Here's $%i.\n", dollars);
+     printf("Here's $%li.\n", dollars);
 }
