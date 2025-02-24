@@ -3,57 +3,41 @@
 
 int main(void)
 {
-    // Get the desired height
+    // Requests pyramid height
     int n;
     do
     {
         n = get_int("Height: ");
     }
-    while (8 < n || n < 1);
+    while (n < 1 || n > 8);
 
-
-    int row = 0;     // Current row / amount of #
-    int space = 0;   // Amount of spaces before #
-    int s_count = 0; // Counter to keep track of space
-    int b_count = 0; // Counter to keep track of #
-    do
+    // Loop for each pyramid line
+    for (int row = 0; row < n; row++)
     {
-
-        space = (n - row - 1);
-
-        // Loop to print spaces
-        while (s_count < space)
+        // Imprime espaços à esquerda
+        for (int space = 0; space < (n - row - 1); space++)
         {
             printf(" ");
-            s_count++;
         }
 
-        s_count = 0;
-
-        // Loop to print #'s
-
-        do
+        // Imprime blocos # (primeira metade)
+        for (int hash = 0; hash <= row; hash++)
         {
             printf("#");
-            b_count++;
         }
-        while (b_count < (row + 1));
 
-        b_count = 0;
+        // Espaço duplo no meio
         printf("  ");
 
-        // Loop to print #'s after space
-
-        do
+        // Imprime blocos # (segunda metade)
+        for (int hash = 0; hash <= row; hash++)
         {
             printf("#");
-            b_count++;
         }
-        while (b_count < (row + 1));
 
-        b_count = 0;
+        // Nova linha após cada linha da pirâmide
         printf("\n");
-        row++;
     }
-    while (row < n);
+    
+    return 0;
 }
