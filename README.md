@@ -1,1 +1,1 @@
-In this folder i'm inserting C exercises that i'm learning into CS50 Course
+I created this repository to insert my exercises related of my learning of the Arrays theory.
